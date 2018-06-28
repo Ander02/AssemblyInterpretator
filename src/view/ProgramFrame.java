@@ -27,6 +27,7 @@ public class ProgramFrame extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         commandsTextbox = new javax.swing.JTextPane();
+        executeButton = new javax.swing.JButton();
         axLabel = new javax.swing.JLabel();
         bxLabel = new javax.swing.JLabel();
         dxLabel = new javax.swing.JLabel();
@@ -35,7 +36,6 @@ public class ProgramFrame extends javax.swing.JFrame {
         bxValue = new javax.swing.JLabel();
         dxValue = new javax.swing.JLabel();
         cxValue = new javax.swing.JLabel();
-        executeButton = new javax.swing.JButton();
         pcLabel = new javax.swing.JLabel();
         pcValue = new javax.swing.JLabel();
         marLabel = new javax.swing.JLabel();
@@ -48,6 +48,10 @@ public class ProgramFrame extends javax.swing.JFrame {
         irP1Label = new javax.swing.JLabel();
         irP2Value = new javax.swing.JLabel();
         irP2Label = new javax.swing.JLabel();
+        separator1 = new javax.swing.JSeparator();
+        separator2 = new javax.swing.JSeparator();
+        separator3 = new javax.swing.JSeparator();
+        separator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interpretador Assembly");
@@ -55,6 +59,14 @@ public class ProgramFrame extends javax.swing.JFrame {
 
         commandsTextbox.setName("commandsTextbox"); // NOI18N
         jScrollPane1.setViewportView(commandsTextbox);
+
+        executeButton.setText("Executar");
+        executeButton.setName("ButtonExecute"); // NOI18N
+        executeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                executeButtonActionPerformed(evt);
+            }
+        });
 
         axLabel.setText("Ax: ");
         axLabel.setName("axLabel"); // NOI18N
@@ -79,14 +91,6 @@ public class ProgramFrame extends javax.swing.JFrame {
 
         cxValue.setText("Cx Value");
         cxValue.setName("cxValue"); // NOI18N
-
-        executeButton.setText("Executar");
-        executeButton.setName("ButtonExecute"); // NOI18N
-        executeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                executeButtonActionPerformed(evt);
-            }
-        });
 
         pcLabel.setText("PC: ");
 
@@ -119,27 +123,15 @@ public class ProgramFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(executeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(executeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bxLabel)
                             .addComponent(cxLabel)
                             .addComponent(dxLabel)
                             .addComponent(axLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(marLabel)
-                                    .addComponent(pcLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pcValue)
-                                    .addComponent(marValue)
-                                    .addComponent(dxValue)
-                                    .addComponent(cxValue)
-                                    .addComponent(bxValue)
-                                    .addComponent(axValue)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(mbrLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -155,8 +147,24 @@ public class ProgramFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(irOpLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(irOpValue)))
-                        .addGap(0, 55, Short.MAX_VALUE)))
+                                .addComponent(irOpValue))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(marLabel)
+                                    .addComponent(pcLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pcValue)
+                                    .addComponent(marValue)
+                                    .addComponent(dxValue)
+                                    .addComponent(cxValue)
+                                    .addComponent(bxValue)
+                                    .addComponent(axValue))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(separator2)
+                    .addComponent(separator3)
+                    .addComponent(separator4)
+                    .addComponent(separator1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -165,6 +173,8 @@ public class ProgramFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(axLabel)
                             .addComponent(axValue))
@@ -180,7 +190,9 @@ public class ProgramFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dxLabel)
                             .addComponent(dxValue))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pcLabel)
                             .addComponent(pcValue))
@@ -192,7 +204,9 @@ public class ProgramFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(mbrLabel)
                             .addComponent(mbrValue))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(separator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(irOpLabel)
                             .addComponent(irOpValue))
@@ -204,7 +218,9 @@ public class ProgramFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(irP2Label)
                             .addComponent(irP2Value, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(120, 120, 120)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(separator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
                         .addComponent(executeButton))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
@@ -288,5 +304,9 @@ public class ProgramFrame extends javax.swing.JFrame {
     private javax.swing.JLabel mbrValue;
     private javax.swing.JLabel pcLabel;
     private javax.swing.JLabel pcValue;
+    private javax.swing.JSeparator separator1;
+    private javax.swing.JSeparator separator2;
+    private javax.swing.JSeparator separator3;
+    private javax.swing.JSeparator separator4;
     // End of variables declaration//GEN-END:variables
 }
