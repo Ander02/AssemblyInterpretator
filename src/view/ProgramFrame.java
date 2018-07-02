@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import java.util.ArrayList;
@@ -25,7 +20,7 @@ public class ProgramFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        scrollPanel = new javax.swing.JScrollPane();
         commandsTextbox = new javax.swing.JTextPane();
         executeButton = new javax.swing.JButton();
         axLabel = new javax.swing.JLabel();
@@ -58,7 +53,7 @@ public class ProgramFrame extends javax.swing.JFrame {
         setName("MainFrame"); // NOI18N
 
         commandsTextbox.setName("commandsTextbox"); // NOI18N
-        jScrollPane1.setViewportView(commandsTextbox);
+        scrollPanel.setViewportView(commandsTextbox);
 
         executeButton.setText("Executar");
         executeButton.setName("ButtonExecute"); // NOI18N
@@ -122,7 +117,7 @@ public class ProgramFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(executeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
@@ -222,7 +217,7 @@ public class ProgramFrame extends javax.swing.JFrame {
                         .addComponent(separator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(82, 82, 82)
                         .addComponent(executeButton))
-                    .addComponent(jScrollPane1))
+                    .addComponent(scrollPanel))
                 .addContainerGap())
         );
 
@@ -297,13 +292,13 @@ public class ProgramFrame extends javax.swing.JFrame {
     private javax.swing.JLabel irP1Value;
     private javax.swing.JLabel irP2Label;
     private javax.swing.JLabel irP2Value;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel marLabel;
     private javax.swing.JLabel marValue;
     private javax.swing.JLabel mbrLabel;
     private javax.swing.JLabel mbrValue;
     private javax.swing.JLabel pcLabel;
     private javax.swing.JLabel pcValue;
+    private javax.swing.JScrollPane scrollPanel;
     private javax.swing.JSeparator separator1;
     private javax.swing.JSeparator separator2;
     private javax.swing.JSeparator separator3;
